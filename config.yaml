@@ -1,8 +1,8 @@
 label-studio:
- url: <url>
- api-token: <api_token>
- db-and-media-dir: <database_and_media_dir>
- project-id: <project_id>
+ url:                 # Local host URL
+ api-token:           # Label Studio API Token
+ db-and-media-dir:    # Database and Media Directory
+ project-id:          # Project ID
 
 path:
  audio: ./data
