@@ -53,13 +53,17 @@ if __name__ == "__main__":
     all_preds = pd.read_csv("predictions.csv", encoding="utf-8").set_index("Name")
     all_preds = all_preds.to_dict("index")
 
-    # Load all audio in directory
+    # Load all audio in the directory
     for audio in audio_paths:
         # Upload audio
         upload_audio(config, audio_path = audio)
 
         audio_name = audio.split(".mp3")[0]
-        preds = all_preds[audio_name]["result"]
+        try:
+            preds = all_preds[audio_name]["result"]
+        except KeyError:
+            print(f"File {audio} not in predictions")
+            continue
 
         # Replace single quote to double quote
         preds = preds.replace("'", '"')
