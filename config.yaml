@@ -1,0 +1,8 @@
+label-studio:
+ url: http://localhost:8080
+ api-token: f320426dec4d57e3dd3b206237b0aa2041c24e7b
+ db-and-media-dir: C:\Users\PC\AppData\Local\label-studio\label-studio
+ project-id: 2
+
+path:
+ audio: ./data
