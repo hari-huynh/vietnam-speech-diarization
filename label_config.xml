@@ -1,10 +1,22 @@
 <View>
-  <Header value="Select label and click the image to start"/>
-  <Image name="image" value="$image" zoom="true"/>
-  <PolygonLabels name="label" toName="image"
-                 strokeWidth="3" pointSize="small"
-                 opacity="0.9">
-    <Label value="Airplane" background="red"/>
-    <Label value="Car" background="blue"/>
-  </PolygonLabels>
-</View>
+    <Audio name="audio" value="$audio" />
+  
+    <Labels name="label" toName="audio">
+      <Label value="Speaker 1"/>
+      <Label value="Speaker 2"/>
+      <Label value="Speaker 3"/>
+      <Label value="Speaker 4"/>
+    </Labels>
+  
+    <TextArea name="transcription" toName="audio"
+              perRegion="true" whenTagName="label" 
+              displayMode="region-list"/>
+  
+    <Choices name="sentiment" toName="audio" showInline="true"
+             perRegion="true" whenTagName="label">
+        <Choice value="Happy" html="&lt;span style='font-size: 45px; vertical-align: middle;'&gt; &#128512; &lt;/span&gt;"/>
+        <Choice value="Neutral" html="&lt;span style='font-size: 45px; vertical-align: middle;'&gt; &#128528; &lt;/span&gt;"/>
+        <Choice value="Sad" html="&lt;span style='font-size: 45px; vertical-align: middle;'&gt; &#128577; &lt;/span&gt;"/>
+        <Choice value="Angry" html="&lt;span style='font-size: 45px; vertical-align: middle;'&gt; &#128545; &lt;/span&gt;"/>
+    </Choices>                               
+  </View>
