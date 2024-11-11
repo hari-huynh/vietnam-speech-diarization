@@ -9,7 +9,7 @@
     </Labels>
   
     <TextArea name="transcription" toName="audio"
-              perRegion="true" whenTagName="label" 
+              perRegion="true" whenTagName="label" editable="true"
               displayMode="region-list"/>
   
     <Choices name="sentiment" toName="audio" showInline="true"
